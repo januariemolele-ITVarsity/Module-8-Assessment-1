@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In Form</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="center">
+            
+        <h1>Welcome, Please Log In</h1>
+        
+        <form method="post" action="index.html">
+            <div class="txt_field">
+            <label for="username">Username: </label><input type="text" id="username"/><br/>
+            </div>
+
+            <div class="txt_field">
+            <label for="password">Password: </label><input type="text" id="password"/><br/>
+            
+            </div>
+            <input type="button" value="Log In" onClick = "validateUser()"><br/>
+            
+            <center><strong><p id="message"></p></strong></center>
+            
+        </form>
+        
+        </div>
+        
+        <script>
+            function validateUser() {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                
+                verifyUser(username,password);
+            }
+            
+            function verifyUser(username, password){
+                var systemUsername = "January"
+                var systemPassword = "01234"
+                
+                if (username == systemUsername && password == systemPassword){
+                    document.getElementById("message").innerHTML = "Successful. Logging You In..."
+                } 
+                else {
+                    document.getElementById("message").innerHTML = "Error! Username or Password incorrect."
+                }
+            }
+        
+        </script>
+    
+    </body>
+
+</html>
